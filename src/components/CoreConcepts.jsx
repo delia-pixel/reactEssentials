@@ -1,16 +1,19 @@
+import { CORE_CONCEPTS } from "../data";
+import CoreConcept from "./CoreConcept";
+import Section from "./Section";
 
-
-
-function CoreConcepts(props) {
-    return (
-        <div>
-            <li>
-                <img src={props.image} alt={props.title} />
-                <h3>{props.title }</h3>
-                <p>{props.description }</p>
-            </li>
-        </div>
-    )
-}
+const CoreConcepts = () => {
+  return (
+    <>
+      <Section title="Core concepts" id="core-concepts">
+        <ul>
+          {CORE_CONCEPTS.map((conceptItem) => (
+            <CoreConcept key={conceptItem.title} {...conceptItem}></CoreConcept>
+          ))}
+        </ul>
+      </Section>
+    </>
+  );
+};
 
 export default CoreConcepts;
